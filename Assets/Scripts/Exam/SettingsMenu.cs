@@ -21,7 +21,7 @@ public class SettingsMenu : MonoBehaviour
 
         List<string> options = new List<string>();
 
-        int currentRes = 0;
+        int currentRes = resolutions.Length-1;
 
         for(int i = 0; i < resolutions.Length; i++)
         {
@@ -29,7 +29,7 @@ public class SettingsMenu : MonoBehaviour
 
             options.Add(option);
 
-            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
                 currentRes = i;
             }
@@ -39,6 +39,13 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionDropdown.value = currentRes;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetRes(int res)
+    {
+        Resolution resolution = resolutions[res];
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetVolume(float volume)
