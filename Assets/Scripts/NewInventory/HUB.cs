@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class HUB : MonoBehaviour
 { 
     public Inventory Inventory;
 
     public GameObject MessagePanel;
+
+    public  TextMeshProUGUI MessageText;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +75,8 @@ public class HUB : MonoBehaviour
 
     public void OpenMessagePanel(string text)
     {
-        MessagePanel.SetActive(true); 
+        MessagePanel.SetActive(true);
+        MessageText.text = text;
     }
 
     public void CloseMessagePanel()

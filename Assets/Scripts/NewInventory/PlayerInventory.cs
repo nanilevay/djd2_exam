@@ -33,9 +33,7 @@ public class PlayerInventory : MonoBehaviour
     public int counter = 0;
 
     private IInventoryItem mCurrentItem = null;
-    
-    public DiferentDialogues dd;
-
+   
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
@@ -111,21 +109,22 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    /*
+    
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        hub.OpenMessagePanel("");
-
+        if(vc.InventoryIsActive == true)
+            hub.OpenMessagePanel("");
+        /*
         if (other.tag == "Karen")
         {
             //gameObject.GetComponent<CharacterController>().enabled = false;
             gameObject.GetComponent<PlayerMov>().enabled = false;
             karenSpeech.SetActive(true);
         }
-
+        */
     }
-    */
+    
     void OnTriggerExit(Collider other)
     { 
         hub.CloseMessagePanel();
@@ -138,10 +137,9 @@ public class PlayerInventory : MonoBehaviour
 
         IInventoryItem currentItem = null;
 
-       
-
         if (item != null && other.tag == "ZamazonKit")
         {
+            hub.OpenMessagePanel("Press F to obtain Zamazon Kit!!");
             trigger.GetComponent<BoxCollider>().enabled = true;
             doorClosed = true;
             if (Input.GetKeyDown(KeyCode.F))
@@ -158,7 +156,7 @@ public class PlayerInventory : MonoBehaviour
         { 
             if (item != null && other.tag == "Pickable")
             {
-                hub.OpenMessagePanel("");
+                hub.OpenMessagePanel("Press F to pick up");
             
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -169,9 +167,9 @@ public class PlayerInventory : MonoBehaviour
 
             if (item != null && other.tag == "Touchable")
             {
+                hub.OpenMessagePanel("Press f to use");
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    hub.OpenMessagePanel("");
                     item.OnUse();
                 }
             }
@@ -181,6 +179,8 @@ public class PlayerInventory : MonoBehaviour
             if (item != null && other.tag == "PictureClues")
             {
                 counter+=1;
+
+                hub.OpenMessagePanel("Press F to pick up");
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {

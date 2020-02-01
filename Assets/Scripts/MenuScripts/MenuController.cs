@@ -9,7 +9,6 @@ public class MenuController : MonoBehaviour
     [SerializeField] string GameOverMenuScene;
     [SerializeField] string GameWonMenuScene;
 
-
     // Start is called before the first frame update
     void Start()
     {

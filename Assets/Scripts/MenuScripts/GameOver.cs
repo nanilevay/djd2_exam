@@ -5,21 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject gameOver;
-    
-    private void OnTriggerEnter(Collider other)
+
+    public ViewController vc;
+
+    public void ZenEnd()
     {
-        if (other.tag == "Player")
-        {
-            StartCoroutine(Finish());
-            
-        }
+        vc.ToggleSuspects(true);
+        StartCoroutine(Finish());
     }
 
     IEnumerator Finish()
     {
         GameObject.Find("Fade").GetComponent<Animator>().SetBool("fading", false);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("GameOverF");
+        SceneManager.LoadScene("ZenEnd");
     }
 }

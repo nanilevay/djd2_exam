@@ -5,12 +5,12 @@ using UnityEngine;
 public class FadeAnimations : MonoBehaviour
 {
     public GameObject karenSpeech;
-   
+
+
     public bool fading;
 
     public HUB hub;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(StartGame());

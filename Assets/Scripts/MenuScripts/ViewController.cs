@@ -11,6 +11,7 @@ public class ViewController : MonoBehaviour
     public GameObject bookPanel;
     public GameObject notesPanel;
     public GameObject zamazonKitPanel;
+    public GameObject suspectPanel;
 
     public bool InputChecking;
     public bool passwordCorrect;
@@ -45,6 +46,12 @@ public class ViewController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu(false);
+            ShowMouseCursor();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ToggleSuspects(false);
             ShowMouseCursor();
         }
 
@@ -98,6 +105,13 @@ public class ViewController : MonoBehaviour
         InputChecking = !pauseMenu.activeInHierarchy;
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
         StopPlayerMotion(!pauseMenu.activeInHierarchy);
+    }
+
+    public void ToggleSuspects(bool condition)
+    {
+        InputChecking = !suspectPanel.activeInHierarchy;
+        suspectPanel.SetActive(!suspectPanel.activeInHierarchy);
+        StopPlayerMotion(!suspectPanel.activeInHierarchy);
     }
 
     public void ToggleNotes(bool condition)
