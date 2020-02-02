@@ -2,7 +2,7 @@
 
 ## Authors:
 
-###for all the add-ons in this repository related to the exam.
+### for all the add-ons in this repository related to the exam.
 
 **Diana Levay** - a21801515 [nanilevay](https://github.com/nanilevay) 
 
