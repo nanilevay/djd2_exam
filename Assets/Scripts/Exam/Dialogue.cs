@@ -97,7 +97,7 @@ public class Dialogue : MonoBehaviour
         {
             panel.SetActive(true);
             sentences = storageSentences;
-            index = 0;
+            index = -1;
             textDisplay.text = "";
             storage = false;
         }

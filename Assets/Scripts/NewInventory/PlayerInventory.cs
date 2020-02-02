@@ -121,14 +121,6 @@ public class PlayerInventory : MonoBehaviour
     {
         if(vc.InventoryIsActive == true)
             hub.OpenMessagePanel("");
-        /*
-        if (other.tag == "Karen")
-        {
-            //gameObject.GetComponent<CharacterController>().enabled = false;
-            gameObject.GetComponent<PlayerMov>().enabled = false;
-            karenSpeech.SetActive(true);
-        }
-        */
     }
     
     void OnTriggerExit(Collider other)
@@ -220,7 +212,15 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
-          
+            if (item != null && other.tag == "Exit")
+            {
+                hub.OpenMessagePanel("Press F to open door");
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    innerMonologue.storage = true;
+                }
+            }
 
             if (item != null && other.tag == "PictureClues")
             {
