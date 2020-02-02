@@ -147,7 +147,7 @@ public class PlayerInventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 zenSpeech.SetActive(true);
-                other.tag = "Zen2";
+                
             }
         }
 
@@ -157,6 +157,7 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                zenSpeech.SetActive(true);
                 zenDialogue.zen = true;
             }
         }
@@ -191,6 +192,7 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Destroy(other.gameObject);
+                GameObject.FindWithTag("Zen1").tag = "Zen2";
                 innerMonologue.zen = true;
                 Instantiate(Elmo);
             }

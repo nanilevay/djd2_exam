@@ -13,6 +13,8 @@ public class ViewController : MonoBehaviour
     public GameObject zamazonKitPanel;
     public GameObject suspectPanel;
 
+    public GameObject ChickenTrail;
+
     public bool InputChecking;
     public bool passwordCorrect;
 
@@ -41,6 +43,12 @@ public class ViewController : MonoBehaviour
             
             ToggleInventory(false);
             ShowMouseCursor();     
+        }
+
+        if (Input.GetKeyDown(KeyCode.L) && InventoryIsActive == true)
+        {
+
+            ChickenTrail.SetActive(!ChickenTrail.activeInHierarchy);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

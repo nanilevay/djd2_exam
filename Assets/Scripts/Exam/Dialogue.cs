@@ -88,7 +88,7 @@ public class Dialogue : MonoBehaviour
         {
             panel.SetActive(true);
             sentences = zenRoomSentences;
-            index = 0;
+            index = -1;
             textDisplay.text = "";
             zen = false;
         }
