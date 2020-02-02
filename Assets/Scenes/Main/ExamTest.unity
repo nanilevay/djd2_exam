@@ -10162,6 +10162,7 @@ MonoBehaviour:
   - hehe
   - hmmmm
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
@@ -13486,6 +13487,7 @@ MonoBehaviour:
   - hehe
   - hmmmm
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
@@ -16191,6 +16193,7 @@ MonoBehaviour:
   trigger: {fileID: 691709333}
   counter: 0
   innerMonologue: {fileID: 1222936299}
+  zenDialogue: {fileID: 1938037174}
   doorClosed: 0
   doorOpen: 0
   broomFall: 0
@@ -16643,7 +16646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb6b86231e7bfc4f8f4cb6370dcbd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karenSpeech: {fileID: 1222936297}
+  innerSpeech: {fileID: 1222936297}
   fading: 1
   hub: {fileID: 673021598}
 --- !u!1 &1195262373
@@ -16992,6 +16995,7 @@ MonoBehaviour:
   - wowowowo
   - afsdsgf
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
@@ -21998,6 +22002,7 @@ MonoBehaviour:
   - hehe
   - hmmmm
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
@@ -25995,9 +26000,14 @@ MonoBehaviour:
   - Yeah....
   - Zen
   - Tweet
-  zenRoomSentences: []
+  zenRoomSentences:
+  - Oh no!!
+  - Rest in pieces
+  - He fuckin dead
+  - 
   storageSentences: []
   sentences: []
+  index: 0
   TypingSpeed: 0
   intro: 1
   zen: 0
@@ -29172,7 +29182,7 @@ GameObject:
   - component: {fileID: 95943281561210441}
   - component: {fileID: 668221652}
   m_Layer: 0
-  m_Name: Zen
+  m_Name: Zen1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

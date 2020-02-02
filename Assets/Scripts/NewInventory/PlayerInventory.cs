@@ -37,13 +37,16 @@ public class PlayerInventory : MonoBehaviour
     private IInventoryItem mCurrentItem = null;
 
     public Dialogue innerMonologue;
-   
+
+    public Dialogue zenDialogue;
+
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
 
     private void Start()
     {
+        
         inventory.ItemUsed += Inventory_ItemUsed;
         RotActive = true;
     }
@@ -137,16 +140,26 @@ public class PlayerInventory : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        if (other.tag == "NPC")
+        if (other.tag == "Zen1")
         {
             hub.OpenMessagePanel("Press F to talk");
 
             if (Input.GetKeyDown(KeyCode.F))
             {
                 zenSpeech.SetActive(true);
+                other.tag = "Zen2";
             }
         }
 
+        if (other.tag == "Zen2")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                zenDialogue.zen = true;
+            }
+        }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 

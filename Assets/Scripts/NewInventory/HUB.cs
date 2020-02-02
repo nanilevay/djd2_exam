@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 using TMPro;
 
 public class HUB : MonoBehaviour
-{ 
+{
     public Inventory Inventory;
 
     public GameObject MessagePanel;
 
-    public  TextMeshProUGUI MessageText;
+    public TextMeshProUGUI MessageText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +27,12 @@ public class HUB : MonoBehaviour
         foreach (Transform slot in inventoryPanel)
         {
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-           
+
             Image image = imageTransform.GetComponent<Image>();
-           
+
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-            if(!image.enabled)
+            if (!image.enabled)
             {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
@@ -41,35 +41,35 @@ public class HUB : MonoBehaviour
 
                 break;
             }
-                  
 
-       
-            }         
-        
+
+
+        }
+
     }
 
     public void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
 
-        foreach(Transform slot in inventoryPanel)
+        foreach (Transform slot in inventoryPanel)
         {
-  
+
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-           
+
 
             Image image = imageTransform.GetComponent<Image>();
-         
+
 
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-            if(itemDragHandler.Item.Equals(e.Item))
+            if (itemDragHandler.Item.Equals(e.Item))
             {
                 image.enabled = false;
                 image.sprite = null;
                 itemDragHandler.Item = null;
                 break;
-            }          
+            }
         }
     }
 

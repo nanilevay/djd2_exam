@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeAnimations : MonoBehaviour
 {
-    public GameObject karenSpeech;
+    public GameObject innerSpeech;
 
     public bool fading;
 
@@ -21,6 +21,6 @@ public class FadeAnimations : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        karenSpeech.SetActive(true);
+        innerSpeech.SetActive(true);
     }
 }

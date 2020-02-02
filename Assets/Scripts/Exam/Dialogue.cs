@@ -21,14 +21,14 @@ public class Dialogue : MonoBehaviour
 
     public string [] sentences;
 
-    private int index = 0;
+    public int index = 0;
 
     public float TypingSpeed;
 
     public bool intro = true;
 
     public bool zen = false;
-    
+
     public bool storage = false;
 
     void Start()
