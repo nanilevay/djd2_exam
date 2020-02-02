@@ -5,6 +5,8 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+   
+
     public GameObject panel;
 
     public GameObject picture;
@@ -33,9 +35,10 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-    
-        sentences = introSentences;
         
+        sentences = introSentences;
+        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = false;
         StartCoroutine(Type());
 
     }
@@ -71,6 +74,8 @@ public class Dialogue : MonoBehaviour
 
         if(index < sentences.Length - 1)
         {
+            GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+            GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = false;
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
@@ -78,7 +83,9 @@ public class Dialogue : MonoBehaviour
 
         else
         {
-            panel.SetActive(false);          
+            panel.SetActive(false);
+            GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
+            GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = true;
         }
     }
 
