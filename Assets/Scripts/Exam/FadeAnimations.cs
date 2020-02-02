@@ -6,7 +6,6 @@ public class FadeAnimations : MonoBehaviour
 {
     public GameObject karenSpeech;
 
-
     public bool fading;
 
     public HUB hub;

@@ -28,23 +28,24 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject DoorLivingRoom;
 
+    public GameObject zenSpeech;
+
     public TriggerDoorLock trigger;
 
     public int counter = 0;
 
     private IInventoryItem mCurrentItem = null;
+
+    public Dialogue innerMonologue;
    
     public bool doorClosed;
     public bool doorOpen;
     public bool broomFall;
-    public bool s_1;
-    public bool s_2;
 
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
         RotActive = true;
-        s_1 = true;
     }
 
     public void Activate(bool rotActive)
@@ -58,8 +59,9 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
         {
             GoItem.SetActive(false);
-
-            GoItem.GetComponent<RotateObject>().enabled = true;
+            
+            if (GoItem.GetComponent<RotateObject>() != null)
+                GoItem.GetComponent<RotateObject>().enabled = true;
 
             RotActive = true;
         }
@@ -97,7 +99,8 @@ public class PlayerInventory : MonoBehaviour
             goItem = (item as MonoBehaviour).gameObject;
 
             goItem.SetActive(true);
-            goItem.GetComponent<RotateObject>().enabled = true;
+            if(goItem.GetComponent<RotateObject>() != null)
+                goItem.GetComponent<RotateObject>().enabled = true;
             goItem.transform.parent = Hand.transform;
             goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
             goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
@@ -133,26 +136,54 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerStay(Collider other)
     {
+
+        if (other.tag == "NPC")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                zenSpeech.SetActive(true);
+            }
+        }
+
+
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 
         IInventoryItem currentItem = null;
 
+        
+
+        if (item != null && other.tag == "Door")
+        {
+            hub.OpenMessagePanel("Press F to open door");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                item.OnUse();
+                other.GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+
+
         if (item != null && other.tag == "ZamazonKit")
         {
             hub.OpenMessagePanel("Press F to obtain Zamazon Kit!!");
+           
             trigger.GetComponent<BoxCollider>().enabled = true;
             doorClosed = true;
+
             if (Input.GetKeyDown(KeyCode.F))
             {
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
+                Destroy(other.gameObject);
+                innerMonologue.zen = true;
                 Instantiate(Elmo);
-                s_1 = false;
-                s_2 = true;
             }
         }
 
-        if(vc.InventoryIsActive == true) 
+        if (vc.InventoryIsActive == true) 
         { 
             if (item != null && other.tag == "Pickable")
             {

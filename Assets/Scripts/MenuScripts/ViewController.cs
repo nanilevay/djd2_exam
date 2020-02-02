@@ -49,7 +49,7 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             ToggleSuspects(false);
             ShowMouseCursor();
