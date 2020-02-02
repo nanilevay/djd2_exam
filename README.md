@@ -6,7 +6,7 @@
 
 **Diana Levay** - a21801515 [nanilevay](https://github.com/nanilevay) 
 
-### for the past version of the game, found at [this] (https://github.com/AnSantos99/Defective-Detective_DJD) link
+### for the past version of the game, found at [this](https://github.com/AnSantos99/Defective-Detective_DJD) link
 
 **Diana Levay** - a21801515 [nanilevay](https://github.com/nanilevay) 
 
