@@ -151,7 +151,9 @@ public class PlayerInventory : MonoBehaviour
             {
                 zenSpeech.SetActive(true);
                 zenDialogue.zen = true;
+                counter += 4;
             }
+            
         }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -224,7 +226,6 @@ public class PlayerInventory : MonoBehaviour
 
             if (item != null && other.tag == "PictureClues")
             {
-                counter+=1;
 
                 hub.OpenMessagePanel("Press F to pick up");
 
@@ -239,8 +240,6 @@ public class PlayerInventory : MonoBehaviour
                     Destroy(other);
      
                     hub.OpenMessagePanel("");
-
-                    Debug.Log(counter);
                 }
             }
 

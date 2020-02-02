@@ -63,7 +63,7 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.L) && InventoryIsActive == true)
         {
             ToggleNotes(false);
             ShowMouseCursor();
@@ -75,16 +75,6 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
     }
-
-    // change to this later 
-    /*
-    public void ToggleComponent(bool condition, GameObject component)
-    {
-        InputChecking = !component.activeInHierarchy;
-        inputMenu.SetActive(!component.activeInHierarchy);
-        StopPlayerMotion(!component.activeInHierarchy);
-    }
-    */
 
     public void ToggleKit(bool condition)
     {
