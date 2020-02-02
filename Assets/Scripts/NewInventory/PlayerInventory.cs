@@ -20,6 +20,8 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject Elmo;
 
+    public GameObject ElmoAlive;
+
     public GameObject Broom;
 
     public GameObject DoorStorage;
@@ -188,6 +190,7 @@ public class PlayerInventory : MonoBehaviour
                 Destroy(other.gameObject);
                 GameObject.FindWithTag("Zen1").tag = "Zen2";
                 innerMonologue.zen = true;
+                Destroy(ElmoAlive);
                 Instantiate(Elmo);
             }
         }
