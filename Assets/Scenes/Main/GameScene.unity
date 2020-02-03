@@ -1313,7 +1313,6 @@ GameObject:
   - component: {fileID: 80100932}
   - component: {fileID: 80100935}
   - component: {fileID: 80100934}
-  - component: {fileID: 80100933}
   m_Layer: 0
   m_Name: ChickenTrail (2)
   m_TagString: PictureClues
@@ -1335,19 +1334,6 @@ Transform:
   m_Father: {fileID: 318237835}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 88.938, y: -180.00099, z: -130.169}
---- !u!114 &80100933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80100931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 80100931}
 --- !u!65 &80100934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2549,12 +2535,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143472105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 143472105}
 --- !u!1 &149162683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3630,6 @@ GameObject:
   - component: {fileID: 212905752}
   - component: {fileID: 212905755}
   - component: {fileID: 212905754}
-  - component: {fileID: 212905753}
   m_Layer: 0
   m_Name: ChickenTrail (3)
   m_TagString: PictureClues
@@ -3667,19 +3651,6 @@ Transform:
   m_Father: {fileID: 318237835}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 88.938, y: -179.99998, z: -90.315}
---- !u!114 &212905753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212905751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 212905751}
 --- !u!65 &212905754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5562,13 +5533,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318237835}
+  - component: {fileID: 318237836}
   m_Layer: 0
   m_Name: ChickenTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &318237835
 Transform:
   m_ObjectHideFlags: 0
@@ -5588,6 +5560,25 @@ Transform:
   m_Father: {fileID: 824158754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &318237836
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318237834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed11f326f7f52964094d8b660b91ab84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &319869537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9815,12 +9806,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533929962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 533929962}
 --- !u!1 &539514058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9832,7 +9822,6 @@ GameObject:
   - component: {fileID: 539514059}
   - component: {fileID: 539514062}
   - component: {fileID: 539514061}
-  - component: {fileID: 539514060}
   m_Layer: 0
   m_Name: ChickenTrail (4)
   m_TagString: PictureClues
@@ -9854,19 +9843,6 @@ Transform:
   m_Father: {fileID: 318237835}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 88.938, y: -179.99998, z: -10.187}
---- !u!114 &539514060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539514058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 539514058}
 --- !u!65 &539514061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13511,12 +13487,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731867547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 731867547}
 --- !u!1 &747109277
 GameObject:
   m_ObjectHideFlags: 0
@@ -21793,7 +21768,6 @@ GameObject:
   - component: {fileID: 1250420516}
   - component: {fileID: 1250420519}
   - component: {fileID: 1250420518}
-  - component: {fileID: 1250420517}
   m_Layer: 0
   m_Name: ChickenTrail (1)
   m_TagString: PictureClues
@@ -21815,19 +21789,6 @@ Transform:
   m_Father: {fileID: 318237835}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 88.938, y: -179.99998, z: -28.960001}
---- !u!114 &1250420517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250420515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 1250420515}
 --- !u!65 &1250420518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22722,12 +22683,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296997562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 1296997562}
 --- !u!1 &1301107703
 GameObject:
   m_ObjectHideFlags: 0
@@ -23604,12 +23564,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340139153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 1340139153}
 --- !u!1 &1341832904
 GameObject:
   m_ObjectHideFlags: 0
@@ -33561,7 +33520,6 @@ GameObject:
   - component: {fileID: 2017514630}
   - component: {fileID: 2017514633}
   - component: {fileID: 2017514632}
-  - component: {fileID: 2017514631}
   m_Layer: 0
   m_Name: ChickenTrail
   m_TagString: PictureClues
@@ -33583,19 +33541,6 @@ Transform:
   m_Father: {fileID: 318237835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 88.938, y: -179.99998, z: -85.476006}
---- !u!114 &2017514631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017514629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090c8b35c6d538c4a9fd875282ea3a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 2017514629}
 --- !u!65 &2017514632
 BoxCollider:
   m_ObjectHideFlags: 0
