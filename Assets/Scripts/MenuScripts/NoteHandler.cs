@@ -7,6 +7,8 @@ public class NoteHandler : MonoBehaviour
 {
     public GameObject panel;
 
+    public GameObject[] pages;
+
     public TextMeshProUGUI textDisplay;
 
     public List<string> introSentences;
@@ -50,13 +52,20 @@ public class NoteHandler : MonoBehaviour
 
     void Update()
     {
-
-      
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
             ChangeTexts();
         }
+    }
+
+    public void NextPage(int current)
+    {
+        pages[current].SetActive(false);
+        pages[current+1].SetActive(true);
+    }
+
+    public void PreviousPage()
+    {
 
     }
 
