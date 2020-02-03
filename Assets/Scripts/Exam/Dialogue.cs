@@ -5,8 +5,6 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-   
-
     public GameObject panel;
 
     public GameObject picture;
@@ -33,12 +31,16 @@ public class Dialogue : MonoBehaviour
 
     public bool storage = false;
 
+    private GameObject player;
+
+    PlayerLook camera;
+
     void Start()
     {
         
         sentences = introSentences;
-        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
-        GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = false;
+        player = GameObject.FindWithTag("Player");
+        camera = GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>();
         StartCoroutine(Type());
 
     }
@@ -71,11 +73,12 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
-
         if(index < sentences.Length - 1)
         {
-            GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
-            GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = false;
+            if(player != null)
+                player.GetComponent<CharacterController>().enabled = false;
+            if (camera != null)
+                camera.enabled = false;
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
@@ -84,8 +87,13 @@ public class Dialogue : MonoBehaviour
         else
         {
             panel.SetActive(false);
-            GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
-            GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = true;
+
+            if (player != null)
+                player.GetComponent<CharacterController>().enabled = true;
+            if (camera != null)
+                camera.enabled = true;
+            //GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
+            //GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = true;
         }
     }
 

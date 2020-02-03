@@ -2203,7 +2203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1192652586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb6b86231e7bfc4f8f4cb6370dcbd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karenSpeech: {fileID: 1550846877}
+  innerSpeech: {fileID: 1550846877}
   fading: 1
   hub: {fileID: 0}
 --- !u!1001 &1224680614
@@ -2929,7 +2929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5fb43dd3397cb42975b8c9c051fed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  panel: {fileID: 1550846877}
   picture: {fileID: 1301107703}
   name: {fileID: 996307234}
   textDisplay: {fileID: 1754199145}
@@ -2938,6 +2938,7 @@ MonoBehaviour:
   zenRoomSentences: []
   storageSentences: []
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
