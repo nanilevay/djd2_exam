@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemClickHandler : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ItemClickHandler : MonoBehaviour
     public KeyCode _Key;
 
     private Button _button;
+
+    public HUB hub;
 
     void Awake()
     { 
@@ -59,6 +62,9 @@ public class ItemClickHandler : MonoBehaviour
             _Inventory.UseItem(item);
 
             item.OnUse();
+
+            hub.DescPanel.SetActive(true);
+            hub.DescText.text = item.Description;
         }
     }
 }

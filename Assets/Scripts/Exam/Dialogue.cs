@@ -41,6 +41,11 @@ public class Dialogue : MonoBehaviour
         sentences = introSentences;
         player = GameObject.FindWithTag("Player");
         camera = GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>();
+
+        if (player != null)
+            player.GetComponent<CharacterController>().enabled = false;
+        if (camera != null)
+            camera.enabled = false;
         StartCoroutine(Type());
 
     }
@@ -49,7 +54,6 @@ public class Dialogue : MonoBehaviour
     {  
         name.SetActive(true);
         picture.SetActive(true);
-
 
         ChangeTexts();
 

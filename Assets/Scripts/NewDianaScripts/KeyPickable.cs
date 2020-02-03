@@ -16,6 +16,16 @@ public class KeyPickable : InventoryItemBase
         }
     }
 
+    public override string Description
+    {
+        get
+        {
+            return "the key to the storage room";
+        }
+    }
+
+
+
     public override void OnUse()
     {
 

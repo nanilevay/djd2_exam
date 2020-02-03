@@ -9,6 +9,10 @@ public class HUB : MonoBehaviour
 {
     public Inventory Inventory;
 
+    public GameObject DescPanel;
+
+    public TextMeshProUGUI DescText;
+
     public GameObject MessagePanel;
 
     public TextMeshProUGUI MessageText;
@@ -41,8 +45,6 @@ public class HUB : MonoBehaviour
 
                 break;
             }
-
-
 
         }
 
