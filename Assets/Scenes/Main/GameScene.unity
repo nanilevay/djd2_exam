@@ -11586,7 +11586,7 @@ GameObject:
   - component: {fileID: 643246513}
   m_Layer: 0
   m_Name: Elmo
-  m_TagString: Zen1
+  m_TagString: Elmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19567,6 +19567,9 @@ MonoBehaviour:
   GoItem: {fileID: 0}
   vc: {fileID: 2109375763}
   hub: {fileID: 673021598}
+  Karen: {fileID: 1441403288}
+  KarenAfterDeath: {fileID: 1083970834024512380, guid: ab6058eadb753c24192770444a340751,
+    type: 3}
   Elmo: {fileID: 4158153647606319569, guid: 7c09cda8b8c540b4d8227c2089611e02, type: 3}
   ElmoAlive: {fileID: 643246512}
   Broom: {fileID: 1747602304}
@@ -24887,7 +24890,7 @@ GameObject:
   - component: {fileID: 1441403290}
   m_Layer: 0
   m_Name: Karen
-  m_TagString: Zen1
+  m_TagString: Karen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25277,6 +25280,7 @@ GameObject:
   - component: {fileID: 1468638731}
   - component: {fileID: 1468638730}
   - component: {fileID: 1468638729}
+  - component: {fileID: 1468638732}
   m_Layer: 5
   m_Name: NotesPanel
   m_TagString: Untagged
@@ -25343,6 +25347,40 @@ RectTransform:
   m_AnchoredPosition: {x: -22.625, y: 0}
   m_SizeDelta: {x: -1203.3, y: -321.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1468638732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468638728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c08c3160875a7d438869aa5d9e2f66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1468638728}
+  textDisplay: {fileID: 2034322256}
+  introSentences:
+  - heheheheh
+  - wowowowo
+  - omg
+  zenSentences:
+  - ayyyyy
+  - zen 2
+  - zen 3
+  karenSentences: []
+  pabloSentences: []
+  elmoSentences: []
+  storageSentences: []
+  sentences: []
+  index: 0
+  TypingSpeed: 0
+  intro: 1
+  zen: 1
+  karen: 0
+  pablo: 0
+  elmo: 0
 --- !u!1 &1471240536
 GameObject:
   m_ObjectHideFlags: 0

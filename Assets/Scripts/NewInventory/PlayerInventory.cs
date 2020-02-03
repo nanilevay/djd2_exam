@@ -18,6 +18,10 @@ public class PlayerInventory : MonoBehaviour
 
     public HUB hub;
 
+    public GameObject Karen;
+
+    public GameObject KarenAfterDeath;
+
     public GameObject Elmo;
 
     public GameObject ElmoAlive;
@@ -191,7 +195,9 @@ public class PlayerInventory : MonoBehaviour
                 GameObject.FindWithTag("Zen1").tag = "Zen2";
                 innerMonologue.zen = true;
                 Destroy(ElmoAlive);
+                Destroy(Karen);
                 Instantiate(Elmo);
+                Instantiate(KarenAfterDeath);
             }
         }
 

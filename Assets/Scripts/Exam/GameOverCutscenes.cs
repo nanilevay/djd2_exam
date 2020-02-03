@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverCutscenes : MonoBehaviour
-{ 
+{
+    public string SceneName;
 
     void Awake()
     {
-        SceneManager.LoadScene("GameOverF");
+        SceneManager.LoadScene(SceneName);
     }
 }

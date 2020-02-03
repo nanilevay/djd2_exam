@@ -63,11 +63,13 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && InventoryIsActive == true)
+        
+        if (Input.GetKeyDown(KeyCode.N) && InventoryIsActive == true)
         {
             ToggleNotes(false);
             ShowMouseCursor();
         }
+        
 
         if (Input.GetKeyDown(KeyCode.Z))
         {

@@ -15,8 +15,6 @@ public class ButtonController : MonoBehaviour
 
     [SerializeField] GameObject CreditsPanel;
 
-   
-
     public void Awake()
     {
         MainPanel.SetActive(true);

@@ -1021,13 +1021,13 @@ MonoBehaviour:
   m_margin: {x: -429.16638, y: -69.81763, z: -416.32837, w: -44.61238}
   m_textInfo:
     textComponent: {fileID: 87571438}
-    characterCount: 14
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1648,6 +1648,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61837dd7a98571340a682ff3d8bcfe2e, type: 3}
+--- !u!1 &179986881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179986883}
+  - component: {fileID: 179986882}
+  m_Layer: 0
+  m_Name: ChangeScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &179986882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179986881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fd712f301bd474ab51e232945b2f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: GameScene
+--- !u!4 &179986883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179986881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33260882, y: 0.2883924, z: -1.273556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &205316465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1847,13 +1891,13 @@ MonoBehaviour:
   m_margin: {x: -429.16638, y: -69.81763, z: -416.32837, w: -44.61238}
   m_textInfo:
     textComponent: {fileID: 209265299}
-    characterCount: 14
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -3456,13 +3500,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 389381522}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -4714,13 +4758,13 @@ MonoBehaviour:
   m_margin: {x: -429.16638, y: -69.81763, z: -416.32837, w: -44.61238}
   m_textInfo:
     textComponent: {fileID: 599232062}
-    characterCount: 14
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -4871,13 +4915,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 603997486}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5340,13 +5384,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 636761827}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5734,13 +5778,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 682908865}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -6536,7 +6580,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 777273508}
-    characterCount: 4
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -8228,7 +8272,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1017993807}
-    characterCount: 4
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -9525,7 +9569,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1233676221}
-    characterCount: 4
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -10992,8 +11036,7 @@ MonoBehaviour:
   name: {fileID: 1017993805}
   textDisplay: {fileID: 209265299}
   introSentences:
-  - You figured it out so fast!! how!? Oh this is just the vertical slice...? that
-    explains it...
+  - Lock!! Lock!! Check your room we hid your present!
   zenRoomSentences: []
   storageSentences: []
   sentences: []
@@ -11474,8 +11517,7 @@ MonoBehaviour:
   name: {fileID: 777273506}
   textDisplay: {fileID: 87571438}
   introSentences:
-  - You figured it out so fast!! how!? Oh this is just the vertical slice...? that
-    explains it...
+  - Agh! You weren't supposed to tell him yet!!
   zenRoomSentences: []
   storageSentences: []
   sentences: []
@@ -11875,13 +11917,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 1528625390}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -12362,13 +12404,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 1586630053}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -12604,8 +12646,7 @@ MonoBehaviour:
   name: {fileID: 260721282}
   textDisplay: {fileID: 84643012}
   introSentences:
-  - You figured it out so fast!! how!? Oh this is just the vertical slice...? that
-    explains it...
+  - Happy birthday Lock!
   zenRoomSentences: []
   storageSentences: []
   sentences: []
@@ -13724,8 +13765,7 @@ MonoBehaviour:
   name: {fileID: 1233676219}
   textDisplay: {fileID: 599232062}
   introSentences:
-  - You figured it out so fast!! how!? Oh this is just the vertical slice...? that
-    explains it...
+  - 'Yeah.. Happy birthday... '
   zenRoomSentences: []
   storageSentences: []
   sentences: []
@@ -13974,13 +14014,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 1842142602}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -14780,13 +14820,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 1892580312}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -15563,6 +15603,8 @@ PlayableDirector:
     value: {fileID: 1477637616}
   - key: {fileID: 1636519182949145280, guid: a029220df2d6ab34994da48ab39e780a, type: 2}
     value: {fileID: 1499045556}
+  - key: {fileID: 5274045132468015665, guid: a029220df2d6ab34994da48ab39e780a, type: 2}
+    value: {fileID: 179986881}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2100150330
@@ -15849,13 +15891,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -394.53113, w: 0}
   m_textInfo:
     textComponent: {fileID: 2109956385}
-    characterCount: 0
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

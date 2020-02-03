@@ -23,6 +23,8 @@ TagManager:
   - Zen1
   - Zen2
   - Exit
+  - Pablo1
+  - Pablo2
   layers:
   - Default
   - TransparentFX

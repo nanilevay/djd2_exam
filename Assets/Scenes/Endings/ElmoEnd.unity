@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb6b86231e7bfc4f8f4cb6370dcbd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karenSpeech: {fileID: 1550846877}
+  innerSpeech: {fileID: 0}
   fading: 1
   hub: {fileID: 0}
 --- !u!1001 &1224680614
@@ -2856,6 +2856,7 @@ MonoBehaviour:
   zenRoomSentences: []
   storageSentences: []
   sentences: []
+  index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
@@ -2939,6 +2940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fd712f301bd474ab51e232945b2f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: GameOverF
 --- !u!1 &1712811275
 GameObject:
   m_ObjectHideFlags: 0
