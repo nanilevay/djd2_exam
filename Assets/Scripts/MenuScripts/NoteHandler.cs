@@ -64,9 +64,10 @@ public class NoteHandler : MonoBehaviour
         pages[current+1].SetActive(true);
     }
 
-    public void PreviousPage()
+    public void PreviousPage(int current)
     {
-
+        pages[current].SetActive(false);
+        pages[current + -1].SetActive(true);
     }
 
     public void ChangeTexts()
