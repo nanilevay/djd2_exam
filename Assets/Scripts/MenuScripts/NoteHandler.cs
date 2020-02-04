@@ -9,7 +9,15 @@ public class NoteHandler : MonoBehaviour
 
     public GameObject[] pages;
 
-    public TextMeshProUGUI textDisplay;
+    public TextMeshProUGUI LockText;
+
+    public TextMeshProUGUI ZenText;
+
+    public TextMeshProUGUI KarenText;
+
+    public TextMeshProUGUI PabloText;
+
+    public TextMeshProUGUI ElmoText;
 
     public List<string> introSentences;
 
@@ -21,11 +29,11 @@ public class NoteHandler : MonoBehaviour
 
     public List<string> elmoSentences;
 
-    public List<string> storageSentences;
-
     public string sentences;
 
     public int index = 0;
+
+    int count;
 
     public float TypingSpeed;
 
@@ -41,12 +49,32 @@ public class NoteHandler : MonoBehaviour
 
     void Start()
     {
-        sentences = "Lock's notes:";
+        /*
+        sentences = "";
 
-        foreach(string sentence in introSentences)
+        zenSentences = "";
+
+        karenSentences = "";
+
+        pabloSentences = "";
+
+        elmoSentences = "";
+        */
+
+        foreach (string sentence in introSentences)
             sentences += sentence;
 
-        textDisplay.text = sentences;   
+        LockText.text = "";
+
+        ZenText.text = "";
+
+        KarenText.text = "";
+
+        PabloText.text = "";
+
+        ElmoText.text = "";
+
+        count = 0;
 
     }
 
@@ -54,7 +82,14 @@ public class NoteHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            ChangeTexts();
+            //ChangeTexts();
+            
+            AddTextLock(count);
+            AddTextZen(count);
+            AddTextElmo(count);
+            AddTextKaren(count);
+            AddTextPablo(count);
+            count += 1;
         }
     }
 
@@ -70,25 +105,28 @@ public class NoteHandler : MonoBehaviour
         pages[current + -1].SetActive(true);
     }
 
-    public void ChangeTexts()
+    public void AddTextLock(int index)
     {
-        if (zen)
-        {
-            panel.SetActive(true);
-            foreach (string sentence in zenSentences)
-                sentences += sentence;
-            textDisplay.text = sentences;
-            zen = false;
-        }
+        LockText.text += introSentences[index];
+    }
 
-        if (karen)
-        {
-            panel.SetActive(true);
-            //sentences += zenSentences;
-            index = -1;
-            textDisplay.text = "";
-            karen = false;
-        }
+    public void AddTextZen(int index)
+    {
+        ZenText.text += zenSentences[index];
+    }
 
+    public void AddTextPablo(int index)
+    {
+        PabloText.text += pabloSentences[index];
+    }
+
+    public void AddTextElmo(int index)
+    {
+        ElmoText.text += elmoSentences[index];
+    }
+
+    public void AddTextKaren(int index)
+    {
+        KarenText.text += karenSentences[index];
     }
 }

@@ -33,5 +33,6 @@ public class PoisonPickable : InventoryItemBase
     public void ShowPaw(bool pawOn)
     {
         PabloPrint.SetActive(true);
+       //ADD TO NOTES Description += "is that pablo's print?";
     }
 }
