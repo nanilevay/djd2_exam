@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 3020206413486415637}
   m_Layer: 0
   m_Name: KarenAfterDeath
-  m_TagString: Karen
+  m_TagString: Karen2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

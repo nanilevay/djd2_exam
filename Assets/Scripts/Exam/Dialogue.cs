@@ -7,8 +7,6 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject panel;
 
-    public GameObject picture;
-
     public GameObject name;
 
     public TextMeshProUGUI textDisplay;
@@ -19,6 +17,8 @@ public class Dialogue : MonoBehaviour
 
     public string[] storageSentences;
 
+    public string[] mirrorSentences;
+
     public string [] sentences;
 
     public int index = 0;
@@ -28,6 +28,8 @@ public class Dialogue : MonoBehaviour
     public bool intro = true;
 
     public bool zen = false;
+
+    public bool zenMirror = false;
 
     public bool storage = false;
 
@@ -53,8 +55,6 @@ public class Dialogue : MonoBehaviour
     void Update()
     {  
         name.SetActive(true);
-        picture.SetActive(true);
-
         ChangeTexts();
 
 
@@ -110,6 +110,15 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             zen = false;
+        }
+
+        if (zenMirror)
+        {
+            panel.SetActive(true);
+            sentences = mirrorSentences;
+            index = -1;
+            textDisplay.text = "";
+            zenMirror = false;
         }
 
         if (storage)

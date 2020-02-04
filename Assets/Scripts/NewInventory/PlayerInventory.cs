@@ -36,15 +36,31 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject zenSpeech;
 
+    public GameObject pabloSpeech;
+
+    public GameObject karenSpeech;
+
     public TriggerDoorLock trigger;
 
     public int counter = 0;
+
+    public int count = 0;
 
     private IInventoryItem mCurrentItem = null;
 
     public Dialogue innerMonologue;
 
+
+    //
     public Dialogue zenDialogue;
+
+    public Dialogue pabloDialogue;
+
+    public Dialogue karenDialogue;
+
+    public GameObject elmoDialogue;
+
+    //
 
     public bool doorClosed;
     public bool doorOpen;
@@ -137,6 +153,42 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Elmo")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                elmoDialogue.SetActive(true);
+                count += 1;
+            }
+        }
+
+        if (other.tag == "Karen1")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                karenSpeech.SetActive(true);
+                count += 1;
+            }
+        }
+
+        if (other.tag == "Karen2")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                karenSpeech.SetActive(true);
+                karenDialogue.zen = true;
+            }
+
+        }
 
         if (other.tag == "Zen1")
         {
@@ -144,8 +196,9 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                hub.CloseMessagePanel();
                 zenSpeech.SetActive(true);
-                
+                count += 1;
             }
         }
 
@@ -155,11 +208,38 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                hub.CloseMessagePanel();
                 zenSpeech.SetActive(true);
                 zenDialogue.zen = true;
-                counter += 4;
+                counter += 1;
             }
             
+        }
+
+        if (other.tag == "Pablo1")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                pabloSpeech.SetActive(true);
+                count += 1;
+            }
+        }
+
+        if (other.tag == "Pablo2")
+        {
+            hub.OpenMessagePanel("Press F to talk");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                pabloSpeech.SetActive(true);
+                pabloDialogue.zen = true;
+                counter += 1;
+            }
+
         }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -176,7 +256,31 @@ public class PlayerInventory : MonoBehaviour
             {
                 item.OnUse();
                 other.GetComponent<BoxCollider>().enabled = false;
+                hub.CloseMessagePanel();
             }
+        }
+
+        if (item != null && other.tag == "LivingRoomDoor")
+        {
+            
+            if (count >= 4)
+            {
+                hub.OpenMessagePanel("Press f to open");
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+
+                    item.OnUse();
+                    other.GetComponent<BoxCollider>().enabled = false;
+                    hub.CloseMessagePanel();
+                }
+            }
+
+            else
+                hub.OpenMessagePanel("Speak to your friends first!!");
+            
+            
+
         }
 
 
@@ -189,10 +293,13 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                hub.CloseMessagePanel();
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Destroy(other.gameObject);
                 GameObject.FindWithTag("Zen1").tag = "Zen2";
+                GameObject.FindWithTag("Pablo1").tag = "Pablo2";
+                GameObject.FindWithTag("Karen1").tag = "Karen2";
                 innerMonologue.zen = true;
                 Destroy(ElmoAlive);
                 Destroy(Karen);
@@ -252,7 +359,7 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
-            if(counter >= 4)
+            if(counter >= 2)
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
                 doorOpen = true;

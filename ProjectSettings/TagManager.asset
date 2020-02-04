@@ -25,6 +25,9 @@ TagManager:
   - Exit
   - Pablo1
   - Pablo2
+  - Karen1
+  - Karen2
+  - LivingRoomDoor
   layers:
   - Default
   - TransparentFX
