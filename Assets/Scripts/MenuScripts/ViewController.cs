@@ -10,6 +10,7 @@ public class ViewController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject inputMenu;
     public GameObject bookPanel;
+    public GameObject bookPanel2;
     public GameObject notesPanel;
     public GameObject zamazonKitPanel;
     public GameObject suspectPanel;
@@ -103,7 +104,14 @@ public class ViewController : MonoBehaviour
         StopPlayerMotion(!bookPanel.activeInHierarchy);
     }
 
-    
+    public void ToggleBookPanel2(bool condition)
+    {
+        InputChecking = !bookPanel2.activeInHierarchy;
+        bookPanel2.SetActive(!bookPanel2.activeInHierarchy);
+        StopPlayerMotion(!bookPanel2.activeInHierarchy);
+    }
+
+
     public void TogglePauseMenu(bool condition)
     {
         InputChecking = !pauseMenu.activeInHierarchy;
@@ -134,23 +142,7 @@ public class ViewController : MonoBehaviour
         if(!condition)
             DescText.text = "";
     }
-    /*
-    public void ToggleInventory(bool condition)
-    {
-        if (condition)
-        {
-            Time.timeScale = 0;
-            ShowMouseCursor();
-            inventory.SetActive(!inventory.activeInHierarchy);
-        }
-
-        else
-        {
-            Time.timeScale = 1.0f;
-            HideMouseCursor();
-        }       
-    }
-    */
+    
     public void StopPlayerMotion(bool condition)
     {
         if (!condition)

@@ -325,7 +325,6 @@ public class PlayerInventory : MonoBehaviour
 
         if (vc.InventoryIsActive == true) 
         {
-///////////////////////////////////
             book = GameObject.Find("ZenDiaryFake");
 
             if (item != null && other.gameObject == book)
