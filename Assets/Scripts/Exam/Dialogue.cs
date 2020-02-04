@@ -25,6 +25,8 @@ public class Dialogue : MonoBehaviour
 
     public string[] bloodInspectSentences;
 
+    public string[] kitSpeechSentences;
+
     public string [] sentences;
 
     public int index = 0;
@@ -40,6 +42,8 @@ public class Dialogue : MonoBehaviour
     public bool storage = false;
 
     public bool clues = false;
+
+    public bool kitSpeech = false;
 
     public bool bloodMessage = false;
 
@@ -66,7 +70,16 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {  
-        name.SetActive(true);
+        if(panel.activeSelf)
+        {
+            name.SetActive(true);
+            if (player != null)
+                player.GetComponent<CharacterController>().enabled = false;
+            if (camera != null)
+            camera.enabled = false;
+        }
+
+        
         
         ChangeTexts();
 
@@ -80,6 +93,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator Type()
     {
+        
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
@@ -121,6 +135,15 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             zen = false;
+        }
+
+        if (kitSpeech)
+        {
+            panel.SetActive(true);
+            sentences = kitSpeechSentences;
+            index = -1;
+            textDisplay.text = "";
+            kitSpeech = false;
         }
 
         if (bloodMessage)

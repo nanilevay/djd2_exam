@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // public GameObject karenSpeech;
 
     public Inventory inventory;
 
@@ -81,22 +80,8 @@ public class PlayerInventory : MonoBehaviour
 
     public void Activate(bool rotActive)
     {
-        RotActive= rotActive;
-    }
-
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.R) || !RotActive && GoItem != null)
-        {
-            GoItem.SetActive(false);
-            
-            if (GoItem.GetComponent<RotateObject>() != null)
-                GoItem.GetComponent<RotateObject>().enabled = true;
-
-
-            RotActive = true;
-        }
+        GoItem.SetActive(false);
+        RotActive = true;
     }
 
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
@@ -134,8 +119,10 @@ public class PlayerInventory : MonoBehaviour
             if(goItem.GetComponent<RotateObject>() != null)
                 goItem.GetComponent<RotateObject>().enabled = true;
             goItem.transform.parent = Hand.transform;
-            goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
-            goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
+            goItem.transform.localPosition = 
+                (item as InventoryItemBase).PickPosition;
+            goItem.transform.localEulerAngles = 
+                (item as InventoryItemBase).PickRotation;
 
             GoItem = goItem;
         }

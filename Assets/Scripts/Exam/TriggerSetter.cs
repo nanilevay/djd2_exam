@@ -11,6 +11,9 @@ public class TriggerSetter : MonoBehaviour
         if(this.name == "ElmoSpeech")
             InnerMonologue.bloodMessage = true;
 
+        if (this.name == "KitSpeech")
+            InnerMonologue.kitSpeech = true;
+
         if (this.name == "Mirror")
             InnerMonologue.zenMirror = true;
 
