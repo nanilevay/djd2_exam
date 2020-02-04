@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoisonPickable : InventoryItemBase
 {
-
+    public GameObject PabloPrint;
     // this is a test of a specific item
     public override string Name
     {
@@ -28,5 +28,10 @@ public class PoisonPickable : InventoryItemBase
     public override void OnUse()
     {
         // ADD NOTES
+    }
+
+    public void ShowPaw(bool pawOn)
+    {
+        PabloPrint.SetActive(true);
     }
 }
