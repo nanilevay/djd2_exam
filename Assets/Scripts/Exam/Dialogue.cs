@@ -138,7 +138,7 @@ public class Dialogue : MonoBehaviour
             sentences = bloodInspectSentences;
             index = -1;
             textDisplay.text = "";
-            bloodMessage = false;
+            bloodMessageInspect = false;
         }
 
         if (zenMirror)
