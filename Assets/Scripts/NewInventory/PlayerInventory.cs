@@ -42,7 +42,7 @@ public class PlayerInventory : MonoBehaviour
 
     public TriggerDoorLock trigger;
 
-    public int counter = 0;
+    public int clueCounter = 0;
 
     public int count = 0;
 
@@ -66,11 +66,15 @@ public class PlayerInventory : MonoBehaviour
     public bool doorOpen;
     public bool broomFall;
 
+    private GameObject[] cluesList;
+
     private void Start()
     {
         
         inventory.ItemUsed += Inventory_ItemUsed;
         RotActive = true;
+
+        cluesList = GameObject.FindGameObjectsWithTag("FootPrints");
     }
 
     public void Activate(bool rotActive)
@@ -87,6 +91,7 @@ public class PlayerInventory : MonoBehaviour
             
             if (GoItem.GetComponent<RotateObject>() != null)
                 GoItem.GetComponent<RotateObject>().enabled = true;
+
 
             RotActive = true;
         }
@@ -211,7 +216,7 @@ public class PlayerInventory : MonoBehaviour
                 hub.CloseMessagePanel();
                 zenSpeech.SetActive(true);
                 zenDialogue.zen = true;
-                counter += 1;
+                clueCounter += 1;
             }
             
         }
@@ -237,15 +242,30 @@ public class PlayerInventory : MonoBehaviour
                 hub.CloseMessagePanel();
                 pabloSpeech.SetActive(true);
                 pabloDialogue.zen = true;
-                counter += 1;
+                clueCounter += 1;
             }
 
+        }
+
+
+        if (other.tag == "FootPrints")
+        {
+            hub.OpenMessagePanel("Examine Clue");
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                hub.CloseMessagePanel();
+                innerMonologue.clues = true;
+                clueCounter += 1;
+
+                foreach(GameObject clueprint in cluesList)
+                    clueprint.GetComponent<BoxCollider>().enabled = false;
+            }
         }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
 
         IInventoryItem currentItem = null;
-
         
 
         if (item != null && other.tag == "Door")
@@ -330,6 +350,15 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
+            if (item != null && other.tag == "Clues")
+            {
+                hub.OpenMessagePanel("Press f to inspect clue");
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    item.OnUse();
+                }
+            }
+
             if (item != null && other.tag == "Exit")
             {
                 hub.OpenMessagePanel("Press F to open door");
@@ -359,7 +388,7 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
-            if(counter >= 2)
+            if(clueCounter >= 2)
             {
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
                 doorOpen = true;

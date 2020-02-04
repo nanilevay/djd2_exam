@@ -28,6 +28,8 @@ TagManager:
   - Karen1
   - Karen2
   - LivingRoomDoor
+  - FootPrints
+  - Clues
   layers:
   - Default
   - TransparentFX

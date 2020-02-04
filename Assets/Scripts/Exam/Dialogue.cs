@@ -17,7 +17,11 @@ public class Dialogue : MonoBehaviour
 
     public string[] storageSentences;
 
+    public string[] bloodClueSentences;
+
     public string[] mirrorSentences;
+
+    public string[] cluesSentences;
 
     public string [] sentences;
 
@@ -32,6 +36,10 @@ public class Dialogue : MonoBehaviour
     public bool zenMirror = false;
 
     public bool storage = false;
+
+    public bool clues = false;
+
+    public bool bloodMessage = false;
 
     private GameObject player;
 
@@ -55,6 +63,7 @@ public class Dialogue : MonoBehaviour
     void Update()
     {  
         name.SetActive(true);
+        
         ChangeTexts();
 
 
@@ -96,8 +105,6 @@ public class Dialogue : MonoBehaviour
                 player.GetComponent<CharacterController>().enabled = true;
             if (camera != null)
                 camera.enabled = true;
-            //GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
-            //GameObject.FindWithTag("MainCamera").GetComponent<PlayerLook>().enabled = true;
         }
     }
 
@@ -110,6 +117,15 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             zen = false;
+        }
+
+        if (bloodMessage)
+        {
+            panel.SetActive(true);
+            sentences = bloodClueSentences;
+            index = -1;
+            textDisplay.text = "";
+            bloodMessage = false;
         }
 
         if (zenMirror)
@@ -129,12 +145,15 @@ public class Dialogue : MonoBehaviour
             textDisplay.text = "";
             storage = false;
         }
-        
-        /*
-        else
-        {  
-            textDisplay.text = "I'm sleepy.....";         
+
+        if (clues)
+        {
+            panel.SetActive(true);
+            sentences = cluesSentences;
+            index = -1;
+            textDisplay.text = "";
+            clues = false;
         }
-        */
+
     }
 }
