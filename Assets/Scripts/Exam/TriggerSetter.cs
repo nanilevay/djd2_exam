@@ -15,8 +15,18 @@ public class TriggerSetter : MonoBehaviour
             InnerMonologue.kitSpeech = true;
 
         if (this.name == "Mirror")
+        {
             InnerMonologue.zenMirror = true;
+            this.GetComponent<Animator>().SetBool("MirrorOpen", true);
+        }
+
+        if (this.name == "LivingRoomStartTrigger")
+        {
+            InnerMonologue.investigationStart = true;
+        }
 
         Destroy(this);
     }
+
+    
 }

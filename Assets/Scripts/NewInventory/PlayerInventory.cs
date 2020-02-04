@@ -43,6 +43,8 @@ public class PlayerInventory : MonoBehaviour
 
     public TriggerDoorLock trigger;
 
+    public GameObject investigationStartTrigger;
+
     public int clueCounter = 0;
 
     public int count = 0;
@@ -306,6 +308,7 @@ public class PlayerInventory : MonoBehaviour
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
                 Destroy(other.gameObject);
+                investigationStartTrigger.SetActive(true);
                 GameObject.FindWithTag("Zen1").tag = "Zen2";
                 GameObject.FindWithTag("Pablo1").tag = "Pablo2";
                 GameObject.FindWithTag("Karen1").tag = "Karen2";

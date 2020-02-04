@@ -7,8 +7,6 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject panel;
 
-    public GameObject name;
-
     public TextMeshProUGUI textDisplay;
 
     public string[] introSentences;
@@ -26,6 +24,8 @@ public class Dialogue : MonoBehaviour
     public string[] bloodInspectSentences;
 
     public string[] kitSpeechSentences;
+
+    public string[] investigationStartSentences;
 
     public string [] sentences;
 
@@ -48,6 +48,8 @@ public class Dialogue : MonoBehaviour
     public bool bloodMessage = false;
 
     public bool bloodMessageInspect = false;
+
+    public bool investigationStart = false;
 
     private GameObject player;
 
@@ -72,7 +74,7 @@ public class Dialogue : MonoBehaviour
     {  
         if(panel.activeSelf)
         {
-            name.SetActive(true);
+           
             if (player != null)
                 player.GetComponent<CharacterController>().enabled = false;
             if (camera != null)
@@ -144,6 +146,15 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             kitSpeech = false;
+        }
+
+        if (investigationStart)
+        {
+            panel.SetActive(true);
+            sentences = investigationStartSentences;
+            index = -1;
+            textDisplay.text = "";
+            investigationStart = false;
         }
 
         if (bloodMessage)
