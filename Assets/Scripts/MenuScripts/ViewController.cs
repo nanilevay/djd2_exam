@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ViewController : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class ViewController : MonoBehaviour
     public GameObject notesPanel;
     public GameObject zamazonKitPanel;
     public GameObject suspectPanel;
+
+    public GameObject DescPanel;
+    public TextMeshProUGUI DescText;
 
     public GameObject ChickenTrail;
 
@@ -123,9 +127,12 @@ public class ViewController : MonoBehaviour
 
     public void ToggleInventory(bool condition)
     {
-       // InputChecking = !inventory.activeInHierarchy;
+        InputChecking = !inventory.activeInHierarchy;
         inventory.SetActive(!inventory.activeInHierarchy);
         StopPlayerMotion(!inventory.activeInHierarchy);
+        DescPanel.SetActive(inventory.activeInHierarchy);
+        if(!condition)
+            DescText.text = "";
     }
     /*
     public void ToggleInventory(bool condition)
