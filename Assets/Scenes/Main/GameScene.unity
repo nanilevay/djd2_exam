@@ -795,11 +795,13 @@ MonoBehaviour:
   bloodInspectSentences: []
   kitSpeechSentences: []
   investigationStartSentences: []
+  finalSentences: []
   sentences: []
   index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0
@@ -10288,6 +10290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 1057983928}
+  monologue: {fileID: 1222936299}
 --- !u!1 &502500976
 GameObject:
   m_ObjectHideFlags: 0
@@ -14611,6 +14614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 283237997}
+  monologue: {fileID: 0}
 --- !u!65 &691709334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14864,11 +14868,13 @@ MonoBehaviour:
   bloodInspectSentences: []
   kitSpeechSentences: []
   investigationStartSentences: []
+  finalSentences: []
   sentences: []
   index: 0
   TypingSpeed: 0
   intro: 1
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0
@@ -20371,11 +20377,13 @@ MonoBehaviour:
   bloodInspectSentences: []
   kitSpeechSentences: []
   investigationStartSentences: []
+  finalSentences: []
   sentences: []
   index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0
@@ -21726,7 +21734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83111ffb4d0838641a54a81dd8238456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 0}
+  key: {fileID: 1416709210}
   isOpen: 1
 --- !u!95 &1057983934
 Animator:
@@ -25785,11 +25793,18 @@ MonoBehaviour:
   investigationStartSentences:
   - Oh no Elmo.... I should see what happened.
   - I wonder if the killer left any prints?
+  finalSentences:
+  - << Alright. They can't hear me now. I think I've got all the clues I need! >>
+  - << The culprit is..... >>
+  - << I gotta check my suspects panel! >>
+  - (Toggle panel with "C", you can open the room and check back with the key in this
+    room)
   sentences: []
   index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0
@@ -32806,11 +32821,13 @@ MonoBehaviour:
   bloodInspectSentences: []
   kitSpeechSentences: []
   investigationStartSentences: []
+  finalSentences: []
   sentences: []
   index: 0
   TypingSpeed: 0.02
   intro: 0
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0
@@ -39629,11 +39646,13 @@ MonoBehaviour:
   bloodInspectSentences: []
   kitSpeechSentences: []
   investigationStartSentences: []
+  finalSentences: []
   sentences: []
   index: 0
   TypingSpeed: 0
   intro: 1
   zen: 0
+  final: 0
   zenMirror: 0
   storage: 0
   clues: 0

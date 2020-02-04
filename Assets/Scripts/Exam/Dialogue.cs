@@ -27,6 +27,8 @@ public class Dialogue : MonoBehaviour
 
     public string[] investigationStartSentences;
 
+    public string[] finalSentences;
+
     public string [] sentences;
 
     public int index = 0;
@@ -36,6 +38,9 @@ public class Dialogue : MonoBehaviour
     public bool intro = true;
 
     public bool zen = false;
+
+
+    public bool final = false;
 
     public bool zenMirror = false;
 
@@ -191,6 +196,15 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             storage = false;
+        }
+
+        if (final)
+        {
+            panel.SetActive(true);
+            sentences = finalSentences;
+            index = -1;
+            textDisplay.text = "";
+            final = false;
         }
 
         if (clues)

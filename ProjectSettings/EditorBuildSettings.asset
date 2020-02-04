@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Endings/PabloEnd.unity
     guid: 25272935aad7dbc4297ce463ec2a0b28
   - enabled: 1
-    path: Assets/Scenes/Menus/GameOverF 1.unity
+    path: Assets/Scenes/Menus/GameOverF.unity
     guid: e6668502e5d46f74eb20728cea5bc473
   - enabled: 1
     path: Assets/Scenes/Main/GameScene.unity
