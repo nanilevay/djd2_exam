@@ -8,7 +8,11 @@ public class TriggerSetter : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        InnerMonologue.zenMirror = true;
+        if(this.name == "ElmoSpeech")
+            InnerMonologue.bloodMessage = true;
+
+        if (this.name == "Mirror")
+            InnerMonologue.zenMirror = true;
 
         Destroy(this);
     }

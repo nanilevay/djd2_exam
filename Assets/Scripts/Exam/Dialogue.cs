@@ -23,6 +23,8 @@ public class Dialogue : MonoBehaviour
 
     public string[] cluesSentences;
 
+    public string[] bloodInspectSentences;
+
     public string [] sentences;
 
     public int index = 0;
@@ -40,6 +42,8 @@ public class Dialogue : MonoBehaviour
     public bool clues = false;
 
     public bool bloodMessage = false;
+
+    public bool bloodMessageInspect = false;
 
     private GameObject player;
 
@@ -123,6 +127,15 @@ public class Dialogue : MonoBehaviour
         {
             panel.SetActive(true);
             sentences = bloodClueSentences;
+            index = -1;
+            textDisplay.text = "";
+            bloodMessage = false;
+        }
+
+        if (bloodMessageInspect)
+        {
+            panel.SetActive(true);
+            sentences = bloodInspectSentences;
             index = -1;
             textDisplay.text = "";
             bloodMessage = false;

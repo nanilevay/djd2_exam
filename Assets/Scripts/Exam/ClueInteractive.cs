@@ -25,7 +25,7 @@ public class ClueInteractive : InventoryItemBase
 
     public override void OnUse()
     {
-        Monologue.bloodMessage = true;
+        Monologue.bloodMessageInspect = true;
         inventory.clueCounter += 1;
             this.GetComponent<BoxCollider>().enabled = false;
     }

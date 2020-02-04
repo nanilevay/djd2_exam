@@ -18,6 +18,8 @@ public class PlayerInventory : MonoBehaviour
 
     public HUB hub;
 
+    public GameObject ElmoMonologueTrigger;
+
     public GameObject Karen;
 
     public GameObject KarenAfterDeath;
@@ -320,6 +322,7 @@ public class PlayerInventory : MonoBehaviour
                 GameObject.FindWithTag("Zen1").tag = "Zen2";
                 GameObject.FindWithTag("Pablo1").tag = "Pablo2";
                 GameObject.FindWithTag("Karen1").tag = "Karen2";
+                ElmoMonologueTrigger.SetActive(true);
                 innerMonologue.zen = true;
                 Destroy(ElmoAlive);
                 Destroy(Karen);
