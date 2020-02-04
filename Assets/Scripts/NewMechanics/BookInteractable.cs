@@ -32,6 +32,7 @@ public class BookInteractable : InventoryItemBase
 
     void Start()
     {
+        
         view = GameObject.FindGameObjectWithTag("viewManager");
         viewScript = view.GetComponent<ViewController>();
 
@@ -40,7 +41,7 @@ public class BookInteractable : InventoryItemBase
     public void NextPage(int current)
     {
         pages[current].SetActive(false);
-        pages[current + 1].SetActive(true);
+        pages[current + 1].SetActive(true); 
     }
 
     public void PreviousPage(int current)
@@ -48,6 +49,4 @@ public class BookInteractable : InventoryItemBase
         pages[current].SetActive(false);
         pages[current + -1].SetActive(true);
     }
-
-   
 }

@@ -69,6 +69,8 @@ public class PlayerInventory : MonoBehaviour
     public bool doorOpen;
     public bool broomFall;
 
+    private GameObject book;
+
     private GameObject[] cluesList;
 
     private void Start()
@@ -322,7 +324,22 @@ public class PlayerInventory : MonoBehaviour
         }
 
         if (vc.InventoryIsActive == true) 
-        { 
+        {
+///////////////////////////////////
+            book = GameObject.Find("ZenDiaryFake");
+
+            if (item != null && other.gameObject == book)
+            {
+                hub.OpenMessagePanel("Press F to pick up");
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    inventory.AddItem(item);
+                    item.OnPickup();
+                }
+            }
+///////////////////////////////////
+
             if (item != null && other.tag == "Pickable")
             {
                 hub.OpenMessagePanel("Press F to pick up");

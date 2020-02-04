@@ -30,6 +30,7 @@ TagManager:
   - LivingRoomDoor
   - FootPrints
   - Clues
+  - Pages
   layers:
   - Default
   - TransparentFX
