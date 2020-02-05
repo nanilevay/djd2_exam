@@ -17,6 +17,8 @@ public class HUB : MonoBehaviour
 
     public TextMeshProUGUI MessageText;
 
+    public GameObject[] interactionButtons;
+
     // Start is called before the first frame update
     void Start()
     {

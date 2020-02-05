@@ -8,6 +8,8 @@ public class ItemClickHandler : MonoBehaviour
 {
     public Inventory _Inventory;
 
+    public PlayerInventory pinv;
+
     public KeyCode _Key;
 
     private Button _button;
@@ -59,12 +61,17 @@ public class ItemClickHandler : MonoBehaviour
 
         if(item != null)
         {
+            pinv.GoItem = null;
+
             _Inventory.UseItem(item);
 
-            item.OnUse();
+            //item.OnUse();
 
             hub.DescPanel.SetActive(true);
             hub.DescText.text = item.Description;
+
+            foreach (GameObject button in (hub.interactionButtons))
+                button.SetActive(true);
         }
     }
 }

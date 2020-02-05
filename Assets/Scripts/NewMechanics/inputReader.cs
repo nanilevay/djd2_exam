@@ -8,6 +8,8 @@ public class inputReader : MonoBehaviour
 {
     public TMP_InputField input;
 
+    public string correctPass;
+
     public GameObject Door;
 
     private Animator doorAnim;
@@ -27,7 +29,7 @@ public class inputReader : MonoBehaviour
 
     public void GetInput()
     {
-        if (input.text == "zen is beautiful")
+        if (input.text == correctPass)
         {
             input.text = "";
             doorAnim.SetBool("DoorOpen", true);

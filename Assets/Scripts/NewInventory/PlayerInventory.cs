@@ -73,6 +73,10 @@ public class PlayerInventory : MonoBehaviour
 
     private GameObject[] cluesList;
 
+    private GameObject key;
+    
+    IInventoryItem keyitem;
+
     private void Start()
     {
         
@@ -80,6 +84,13 @@ public class PlayerInventory : MonoBehaviour
         RotActive = true;
 
         cluesList = GameObject.FindGameObjectsWithTag("FootPrints");
+
+        key = GameObject.Find("DoorKey");
+
+         keyitem = key.GetComponent<IInventoryItem>();
+        inventory.AddItem(keyitem);
+
+
     }
 
     public void Activate(bool rotActive)

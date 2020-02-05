@@ -30,7 +30,6 @@ public class KeyPickable : InventoryItemBase
     {
 
        doorAnim.SetBool("DoorOpen", true);
-        
-        
+            
     }
 }

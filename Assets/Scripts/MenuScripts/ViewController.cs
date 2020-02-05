@@ -25,6 +25,8 @@ public class ViewController : MonoBehaviour
 
     public bool InventoryIsActive = false;
 
+    public bool Final = false;
+
     void Start()
     {
         
@@ -62,7 +64,7 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && Final)
         {
             ToggleSuspects(false);
             ShowMouseCursor();
@@ -139,7 +141,7 @@ public class ViewController : MonoBehaviour
         inventory.SetActive(!inventory.activeInHierarchy);
         StopPlayerMotion(!inventory.activeInHierarchy);
         DescPanel.SetActive(inventory.activeInHierarchy);
-        if(!condition)
+        if (!condition)
             DescText.text = "";
     }
     
