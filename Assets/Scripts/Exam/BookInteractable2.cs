@@ -24,6 +24,14 @@ public class BookInteractable2 : InventoryItemBase
         }
     }
 
+    public override string Description
+    {
+        get
+        {
+            return "Zen's Real Diary? What the hell is going on?";
+        }
+    }
+
     public override void OnUse()
     {
         viewScript.ToggleBookPanel2(false);

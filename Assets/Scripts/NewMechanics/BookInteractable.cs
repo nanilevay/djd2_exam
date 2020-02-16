@@ -25,6 +25,14 @@ public class BookInteractable : InventoryItemBase
         }
     }
 
+    public override string Description
+    {
+        get
+        {
+            return "Zen's Diary.. Sounds pretty suspicious, it only has one page.";
+        }
+    }
+
     public override void OnUse()
     {
         viewScript.ToggleBookPanel(false);

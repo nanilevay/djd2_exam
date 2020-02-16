@@ -674,7 +674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &173463371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1457,7 +1457,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1726097767}
-        m_MethodName: ButtonSettingsClose
+        m_MethodName: ButtonCreditsClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3709,7 +3709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1171655789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4533,10 +4533,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Discover your surroundings using the following keyboard keys:\r\n\n[ W
-    ] \u2013 to walk forward\r\n[ A ]  \u2013 to turn left\r\n[ D ]  \u2013 to turn
-    right\r\n[ S ]  \u2013 to walk backwards\r\n[ SHIFT ] \u2013 To run\r\n\nPress
-    [E] to interact with NPC\nPress [I] to open your inventory\nPress [P] to take
-    a break\n"
+    ] \u2013 To walk forward\r\n[ A ]  \u2013 To turn left\r\n[ D ]  \u2013 To turn
+    right\r\n[ S ]  \u2013 To walk backwards\r\n\n[Move mouse cursor] - To look around\n\n[F]
+    - To interact with NPCs and Objects\n[I] - To open your inventory\n[P] - To take
+    a break\n[L] - To inspect clues with kit\n[C] - To accuse a suspect"
 --- !u!222 &1542174408
 CanvasRenderer:
   m_ObjectHideFlags: 0

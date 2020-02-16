@@ -7,6 +7,8 @@ public class PlayerInventory : MonoBehaviour
 
     public Inventory inventory;
 
+    public GameObject ZenRoomTrigger;
+
     public GameObject Hand;
 
     public GameObject GoItem;
@@ -45,8 +47,6 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject investigationStartTrigger;
 
-    public int clueCounter = 0;
-
     public int count = 0;
 
     private IInventoryItem mCurrentItem = null;
@@ -63,6 +63,8 @@ public class PlayerInventory : MonoBehaviour
 
     public GameObject elmoDialogue;
 
+    public GameObject Book;
+
     //
 
     public bool doorClosed;
@@ -76,6 +78,13 @@ public class PlayerInventory : MonoBehaviour
     private GameObject key;
     
     IInventoryItem keyitem;
+
+    public bool inspectDoor = false;
+    public bool inspectSteps = false;
+    public bool getPoison = false;
+    public bool interview = false;
+
+    public NoteHandler notes;
 
     private void Start()
     {
@@ -119,8 +128,6 @@ public class PlayerInventory : MonoBehaviour
 
             vc.ToggleInventory(true);
             GoItem = goItem;
-            Broom.GetComponent<Animator>().SetBool("Fall", true);
-            DoorStorage.GetComponent<Animator>().SetBool("DoorOpen", true);
             broomFall = true;
 
             //FindOjbectOfType<AudioSource>().Play("Fallingbroom");
@@ -192,12 +199,15 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                notes.AddTextKaren(0);
                 hub.CloseMessagePanel();
                 karenSpeech.SetActive(true);
                 karenDialogue.zen = true;
             }
 
         }
+
+
 
         if (other.tag == "Zen1")
         {
@@ -217,10 +227,12 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                notes.AddTextZen(0);
                 hub.CloseMessagePanel();
                 zenSpeech.SetActive(true);
                 zenDialogue.zen = true;
-                clueCounter += 1;
+                interview = true;
+
             }
             
         }
@@ -243,10 +255,13 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                notes.AddTextPablo(0);
+                notes.AddTextPablo(2);
+                notes.AddTextPablo(3);
                 hub.CloseMessagePanel();
                 pabloSpeech.SetActive(true);
                 pabloDialogue.zen = true;
-                clueCounter += 1;
+                notes.AddTextLock(3);
             }
 
         }
@@ -258,11 +273,14 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                notes.AddTextKaren(1);
+                notes.AddTextKaren(2);
+                notes.AddTextKaren(3);
                 hub.CloseMessagePanel();
                 innerMonologue.clues = true;
-                clueCounter += 1;
+                inspectSteps = true;
 
-                foreach(GameObject clueprint in cluesList)
+                foreach (GameObject clueprint in cluesList)
                     clueprint.GetComponent<BoxCollider>().enabled = false;
             }
         }
@@ -293,7 +311,7 @@ public class PlayerInventory : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-
+                    
                     item.OnUse();
                     other.GetComponent<BoxCollider>().enabled = false;
                     hub.CloseMessagePanel();
@@ -301,9 +319,7 @@ public class PlayerInventory : MonoBehaviour
             }
 
             else
-                hub.OpenMessagePanel("Speak to your friends first!!");
-            
-            
+                hub.OpenMessagePanel("Speak to your friends first!!");         
 
         }
 
@@ -317,6 +333,7 @@ public class PlayerInventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                notes.AddTextLock(0);
                 hub.CloseMessagePanel();
                 vc.ToggleKit(false);
                 vc.InventoryIsActive = true;
@@ -344,11 +361,31 @@ public class PlayerInventory : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    notes.AddTextZen(1);
+
+                    innerMonologue.GoToZenRoom = true;
+
+
                     inventory.AddItem(item);
                     item.OnPickup();
                 }
             }
-///////////////////////////////////
+            ///////////////////////////////////
+
+            if (item != null && other.tag == "RealDiary")
+            {
+                hub.OpenMessagePanel("Press F to pick up");
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    innerMonologue.Suspects = true;
+
+                    notes.AddTextZen(3);
+
+                    inventory.AddItem(item);
+                    item.OnUse();
+                }
+            }
 
             if (item != null && other.tag == "Pickable")
             {
@@ -375,17 +412,19 @@ public class PlayerInventory : MonoBehaviour
                 hub.OpenMessagePanel("Press f to inspect clue");
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    
                     item.OnUse();
                 }
             }
 
-            if (item != null && other.tag == "Exit")
+            if (item != null && other.tag == "Exit" && vc.InventoryIsActive)
             {
                 hub.OpenMessagePanel("Press F to open door");
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     innerMonologue.storage = true;
+                    inspectDoor = true;
                 }
             }
 
@@ -396,6 +435,7 @@ public class PlayerInventory : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    notes.AddTextLock(1);
                     inventory.AddItem(item);
                     item.OnPickup();
 
@@ -408,10 +448,17 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
 
-            if(clueCounter >= 2)
+            if(inspectDoor && inspectSteps && getPoison && interview)
             {
+                notes.AddTextPablo(1);
+                notes.AddTextLock(2);
                 DoorLivingRoom.GetComponent<Animator>().SetBool("DoorOpen", true);
                 doorOpen = true;
+                Book.SetActive(true);
+                ZenRoomTrigger.SetActive(true);
+
+                GameObject.FindWithTag("Karen2")
+                    .GetComponent<Animator>().SetBool("Disappear", true);
             }
 
         }

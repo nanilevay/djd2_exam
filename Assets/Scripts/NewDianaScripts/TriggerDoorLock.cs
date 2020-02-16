@@ -10,14 +10,21 @@ public class TriggerDoorLock : MonoBehaviour
 
     public ViewController vc;
 
+    public NoteHandler notes;
+
     void OnTriggerEnter()
     {
+       
         Door.GetComponent<Animator>().SetBool("DoorOpen", false);
 
-        vc.Final = true;
+        //vc.Final = true;
 
-        monologue.final = true;
+        notes.noteTaking = true;
+        notes.AddTextLock(4);
+        notes.noteTaking = false;
 
-      Destroy(this);
+        //monologue.final = true;
+
+        Destroy(this);
     }
 }

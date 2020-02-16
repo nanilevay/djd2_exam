@@ -31,6 +31,7 @@ TagManager:
   - FootPrints
   - Clues
   - Pages
+  - RealDiary
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,7 @@ public class FadeAnimations : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        innerSpeech.SetActive(true);
+        if(innerSpeech != null)
+            innerSpeech.SetActive(true);
     }
 }

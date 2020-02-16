@@ -10,31 +10,31 @@ public class GameOver : MonoBehaviour
 
     public void ZenEnd()
     {
-        vc.ToggleSuspects(true);
+        //vc.ToggleSuspects(true);
         StartCoroutine(Finish("ZenEnd"));
     }
 
     public void PabloEnd()
     {
-        vc.ToggleSuspects(true);
+        //vc.ToggleSuspects(true);
         StartCoroutine(Finish("PabloEnd"));
     }
 
     public void KarenEnd()
     {
-        vc.ToggleSuspects(true);
+        //vc.ToggleSuspects(true);
         StartCoroutine(Finish("KarenEnd"));
     }
 
     public void ElmoEnd()
     {
-        vc.ToggleSuspects(true);
+        //vc.ToggleSuspects(true);
         StartCoroutine(Finish("ElmoEnd"));
     }
 
     public void LockEnd()
     {
-        vc.ToggleSuspects(true);
+        //vc.ToggleSuspects(true);
         StartCoroutine(Finish("LockEnd"));
     }
 

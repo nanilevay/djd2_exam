@@ -14,6 +14,8 @@ public class ViewController : MonoBehaviour
     public GameObject notesPanel;
     public GameObject zamazonKitPanel;
     public GameObject suspectPanel;
+    public GameObject UIPanel;
+    public GameObject UIFinal;
 
     public GameObject DescPanel;
     public TextMeshProUGUI DescText;
@@ -41,6 +43,11 @@ public class ViewController : MonoBehaviour
     {
         if(!InputChecking)
             CheckInput();
+
+        if (InventoryIsActive)
+            ToggleUI();
+        if (Final)
+            UIFinal.SetActive(true);
     }
 
     public void CheckInput()
@@ -70,14 +77,6 @@ public class ViewController : MonoBehaviour
             ShowMouseCursor();
         }
 
-        
-        if (Input.GetKeyDown(KeyCode.N) && InventoryIsActive == true)
-        {
-            ToggleNotes(false);
-            ShowMouseCursor();
-        }
-        
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             ToggleKit(false);
@@ -90,6 +89,13 @@ public class ViewController : MonoBehaviour
         InputChecking = !zamazonKitPanel.activeInHierarchy;
         zamazonKitPanel.SetActive(!zamazonKitPanel.activeInHierarchy);
         StopPlayerMotion(!zamazonKitPanel.activeInHierarchy);
+    }
+
+    public void ToggleUI()
+    {
+      
+        UIPanel.SetActive(true);
+       
     }
 
     public void ToggleInputPanel(bool condition)
@@ -141,6 +147,7 @@ public class ViewController : MonoBehaviour
         inventory.SetActive(!inventory.activeInHierarchy);
         StopPlayerMotion(!inventory.activeInHierarchy);
         DescPanel.SetActive(inventory.activeInHierarchy);
+
         if (!condition)
             DescText.text = "";
     }

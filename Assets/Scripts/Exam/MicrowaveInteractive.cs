@@ -22,7 +22,6 @@ public class MicrowaveInteractive : InventoryItemBase
     public override void OnUse()
     {
         Hub.OpenMessagePanel("open microwave");
-        inventory.clueCounter += 1;
         this.GetComponent<Animator>().SetBool("MicrowaveOpen",true);
         this.GetComponent<BoxCollider>().enabled = false;
         poison.SetActive(true);

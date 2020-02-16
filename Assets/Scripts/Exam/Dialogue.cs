@@ -7,6 +7,8 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject panel;
 
+    public NoteHandler notes;
+
     public TextMeshProUGUI textDisplay;
 
     public string[] introSentences;
@@ -25,7 +27,13 @@ public class Dialogue : MonoBehaviour
 
     public string[] kitSpeechSentences;
 
+    public string[] KarenSuspicionSentences;
+
     public string[] investigationStartSentences;
+
+    public string[] suspectsSentences;
+
+    public string[] GoToZenSentence;
 
     public string[] finalSentences;
 
@@ -39,7 +47,6 @@ public class Dialogue : MonoBehaviour
 
     public bool zen = false;
 
-
     public bool final = false;
 
     public bool zenMirror = false;
@@ -48,13 +55,21 @@ public class Dialogue : MonoBehaviour
 
     public bool clues = false;
 
+    public bool Suspects = false;
+
     public bool kitSpeech = false;
 
     public bool bloodMessage = false;
 
+    public bool GoToZenRoom = false;
+
     public bool bloodMessageInspect = false;
 
     public bool investigationStart = false;
+
+    public bool StorageEnd = false;
+
+    public bool KarenSuspicion = false;
 
     private GameObject player;
 
@@ -169,6 +184,7 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             bloodMessage = false;
+            notes.AddTextElmo(0);
         }
 
         if (bloodMessageInspect)
@@ -178,15 +194,30 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             bloodMessageInspect = false;
+            notes.AddTextElmo(0);
+            notes.AddTextElmo(1);
+            notes.AddTextElmo(2);
+            notes.AddTextElmo(3);
         }
 
         if (zenMirror)
         {
             panel.SetActive(true);
             sentences = mirrorSentences;
+            notes.AddTextZen(2);
             index = -1;
             textDisplay.text = "";
             zenMirror = false;
+        }
+
+
+        if (GoToZenRoom)
+        {
+            panel.SetActive(true);
+            sentences = GoToZenSentence;
+            index = -1;
+            textDisplay.text = "";
+            GoToZenRoom = false;
         }
 
         if (storage)
@@ -205,6 +236,25 @@ public class Dialogue : MonoBehaviour
             index = -1;
             textDisplay.text = "";
             final = false;
+        }
+
+        if (KarenSuspicion)
+        {
+            panel.SetActive(true);
+            sentences = KarenSuspicionSentences;
+            index = -1;
+            textDisplay.text = "";
+            KarenSuspicion = false;
+        }
+
+        if (Suspects)
+        {
+            panel.SetActive(true);
+            sentences = suspectsSentences;
+            index = -1;
+            textDisplay.text = "";
+            StorageEnd = true;
+            Suspects = false;
         }
 
         if (clues)
